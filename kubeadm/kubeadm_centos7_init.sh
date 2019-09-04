@@ -31,7 +31,7 @@ systemctl start docker kubelet && systemctl enable docker kubelet
 
 echo "#########################Kubeadm INIT#####################################"
 echo "Kubeadm init for Calico: kubeadm init --pod-network-cidr=192.168.0.0/16"
-echo "Kubeadm init for Flannel: kubeadm init --pod-network-cidr=10.244.0.0/"
+echo "Kubeadm init for Flannel: kubeadm init --pod-network-cidr=10.244.0.0/16"
 
 
 echo "#############################CNI##########################################"
