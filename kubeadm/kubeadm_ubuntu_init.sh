@@ -1,6 +1,4 @@
 #!/bin/bash
-sudo su -
-
 #Installing dependecies, kubeadm, kubelet and kubectl
 apt-get update && apt-get install -y mc ebtables ethtool docker.io apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
