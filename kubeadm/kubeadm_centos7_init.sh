@@ -1,6 +1,5 @@
 #!/bin/bash
 hostnamectl set-hostname 'k8s-master'
-exec bash
 
 setenforce 0 ← put SULinux to permissive mode
 sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
