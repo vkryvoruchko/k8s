@@ -30,16 +30,19 @@ EOF
 yum update && yum upgrade && yum install -y docker kubelet kubeadm kubectl --disableexcludes=kubernetes
 systemctl start docker kubelet && systemctl enable docker kubelet
 
+echo "#########################Kubeadm INIT#####################################"
 echo "Kubeadm init for Calico: kubeadm init --pod-network-cidr=192.168.0.0/16"
 echo "Kubeadm init for Flannel: kubeadm init --pod-network-cidr=10.244.0.0/"
 
+
+echo "#############################CNI##########################################"
 #calico
-echo "Apply Calico CNI"
+echo "#######################Apply Calico CNI###################"
 echo "kubectl apply -f https://docs.projectcalico.org/v3.1/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml"
 echo "kubectl apply -f https://docs.projectcalico.org/v3.1/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml"
 
 
 #flannel:
-echo "Apply Flannel CNI"
+echo "#######################Apply Flannel CNI##################"
 echo "sysctl net.bridge.bridge-nf-call-iptables=1"
-echo "kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Documentation/kube-flannel.yml"
+echo "kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml"
