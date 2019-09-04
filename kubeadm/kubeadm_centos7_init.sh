@@ -27,7 +27,7 @@ exclude=kube*
 EOF
 
 
-yum update && yum upgrade && yum install -y docker kubelet kubeadm kubectl --disableexcludes=kubernetes
+yum update -y && yum upgrade && yum install -y docker kubelet kubeadm kubectl --disableexcludes=kubernetes
 systemctl start docker kubelet && systemctl enable docker kubelet
 
 echo "#########################Kubeadm INIT#####################################"
